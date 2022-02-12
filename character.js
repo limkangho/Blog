@@ -1,16 +1,15 @@
 export class Character {
-  constructor(x, y, radius, speed) {
+  constructor(stageWidth, stageHeight, x, y, radius, speed) {
     this.radius = radius;
-    this.x = x;
-    this.y = y;
+    this.x = stageWidth / 2;
+    this.y = stageHeight - this.radius;
     // this.vx = speed;
     // this.vy = speed;
 
-    this.vx = speed;
-    this.vy = 0;
-
-    this.g= 0.05;
-    this.vg = 0;
+    this.vx = 10;
+    this.vy = 10;
+    this.g = 0.98;
+    // this.vg = 10;
 
     this.direction = 0;
     this.keyStorage = [];
@@ -20,23 +19,29 @@ export class Character {
   }
 
   draw(ctx, stageWidth, stageHeight) {
-    this.vg += this.g;
-    this.y += this.vy + this.vg;
-    this.hitBottom(stageWidth, stageHeight);
+    if (this.y < stageHeight - this.radius) {
+      this.gravity();
+    } else {
+      this.hitBottom(stageWidth, stageHeight);
+    }
+    
     
 
     if (this.keyStorage[37] == true) {
       this.x -= this.vx;
     }
-    // if (this.keyStorage[38] == true) {
-    //   this.y -= this.vy;
-    // }
+    if (this.keyStorage[38] == true) {
+      this.y -= this.vy;
+    }
     if (this.keyStorage[39] == true) {
       this.x += this.vx;
     }
-    // if (this.keyStorage[40] == true) {
-    //   this.y += this.vy;
-    // }
+    if (this.keyStorage[40] == true) {
+      this.y += this.vy;
+    }
+    if (this.keyStorage[32] == true) {
+      this.jump();
+    }
 
     ctx.fillStyle = '#1b1b1b';
     ctx.beginPath();
@@ -45,13 +50,13 @@ export class Character {
   }
 
   keyStore(e) {
-    if (e.keyCode >= 37 && e.keyCode <= 40) {
+    if (e.keyCode >= 37 && e.keyCode <= 40 || e.keyCode == 32) {
       this.keyStorage[e.keyCode] = true;
     }
   }
 
   keyDiscard(e) {
-    if (e.keyCode >= 37 && e.keyCode <= 40) {
+    if (e.keyCode >= 37 && e.keyCode <= 40 || e.keyCode == 32) {
       this.keyStorage[e.keyCode] = false;
     }
   }
@@ -59,7 +64,17 @@ export class Character {
   hitBottom(stageWidth, stageHeight) {
     if (this.y > stageHeight - this.radius) {
       this.y = stageHeight - this.radius;
-      this.g = 0;
+      this.vy = 0;
     }
+  }
+
+  jump() {
+    this.y -= 30;
+  }
+
+  gravity() {
+    this.vy += this.vy * this.g;
+    this.y += this.vy;
+    console.log(this.vy);
   }
 }

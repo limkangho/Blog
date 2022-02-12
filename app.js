@@ -21,9 +21,9 @@ class App {
     window.addEventListener('resize', this.resize.bind(this), false);
     this.resize();
 
-    this.ball = new Ball(this.stageWidth, this.stageHeight, 12, 18);
+    // this.ball = new Ball(this.stageWidth, this.stageHeight, 12, 18);
     this.block = new Block(350, 30, 100, 250);
-    this.character = new Character(20, 20, 12, 20);
+    this.character = new Character(this.stageWidth, this.stageHeight, 20, 20, 12, 20);
 
     window.requestAnimationFrame(this.animate.bind(this));
   }
@@ -43,7 +43,7 @@ class App {
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
 
     this.block.draw(this.ctx);
-    this.ball.draw(this.ctx, this.stageWidth, this.stageHeight, this.block);
+    // this.ball.draw(this.ctx, this.stageWidth, this.stageHeight, this.block);
     this.character.draw(this.ctx, this.stageWidth, this.stageHeight);
   }
 }
