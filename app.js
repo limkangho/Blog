@@ -7,8 +7,8 @@ import {
 } from './block.js';
 
 import {
-  Character
-} from './character.js';
+  Ball2
+} from './ball2.js';
 
 class App {
   constructor() {
@@ -23,7 +23,7 @@ class App {
 
     // this.ball = new Ball(this.stageWidth, this.stageHeight, 12, 18);
     this.block = new Block(350, 30, 100, 250);
-    this.character = new Character(this.stageWidth, this.stageHeight, 20, 20, 12, 20);
+    this.ball2 = new Ball2(this.stageWidth, this.stageHeight, 20, 20, 12, 10);
 
     window.requestAnimationFrame(this.animate.bind(this));
   }
@@ -44,7 +44,7 @@ class App {
 
     this.block.draw(this.ctx);
     // this.ball.draw(this.ctx, this.stageWidth, this.stageHeight, this.block);
-    this.character.draw(this.ctx, this.stageWidth, this.stageHeight);
+    this.ball2.draw(this.ctx, this.stageWidth, this.stageHeight);
   }
 }
 

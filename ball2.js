@@ -1,15 +1,18 @@
-export class Character {
+export class Ball2 {
   constructor(stageWidth, stageHeight, x, y, radius, speed) {
     this.radius = radius;
     this.x = stageWidth / 2;
-    this.y = stageHeight - this.radius;
-    // this.vx = speed;
-    // this.vy = speed;
+    this.y = stageHeight / 2;
+    this.vx = speed;
+    this.vy = speed;
 
-    this.vx = 10;
-    this.vy = 10;
-    this.g = 0.98;
-    // this.vg = 10;
+    // this.y = 400;
+    // this.vy = 2;
+
+    // this.vx = 10;
+    // this.vy = 10;
+    // this.g = 0.98;
+    // // this.vg = 10;
 
     this.direction = 0;
     this.keyStorage = [];
@@ -19,14 +22,19 @@ export class Character {
   }
 
   draw(ctx, stageWidth, stageHeight) {
-    if (this.y < stageHeight - this.radius) {
-      this.gravity();
-    } else {
-      this.hitBottom(stageWidth, stageHeight);
-    }
-    
-    
+    // if (this.y < stageHeight - this.radius) {
+    //   this.gravity();
+    // } else {
+    //   this.hitBottom(stageWidth, stageHeight);
+    // }
 
+    // if (this.y - this.radius > stageHeight) {
+    //   this.vy = -this.vy;
+    // } else {
+    //   this.vy += 1;
+    // }
+    // this.y += this.vy;
+    
     if (this.keyStorage[37] == true) {
       this.x -= this.vx;
     }
@@ -40,8 +48,9 @@ export class Character {
       this.y += this.vy;
     }
     if (this.keyStorage[32] == true) {
-      this.jump();
-    }
+      // this.jump();
+      
+    } 
 
     ctx.fillStyle = '#1b1b1b';
     ctx.beginPath();
@@ -61,20 +70,20 @@ export class Character {
     }
   }
 
-  hitBottom(stageWidth, stageHeight) {
-    if (this.y > stageHeight - this.radius) {
-      this.y = stageHeight - this.radius;
-      this.vy = 0;
-    }
-  }
+  // jump() {
+    
+  // }
+  
+  // hitBottom(stageWidth, stageHeight) {
+  //   if (this.y > stageHeight - this.radius) {
+  //     this.y = stageHeight - this.radius;
+  //     this.vy = 0;
+  //   }
+  // }
 
-  jump() {
-    this.y -= 30;
-  }
-
-  gravity() {
-    this.vy += this.vy * this.g;
-    this.y += this.vy;
-    console.log(this.vy);
-  }
+  // gravity() {
+  //   this.vy += this.vy * this.g;
+  //   this.y += this.vy;
+  //   console.log(this.vy);
+  // }
 }
