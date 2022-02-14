@@ -6,14 +6,6 @@ export class Ball2 {
     this.vx = speed;
     this.vy = speed;
 
-    // this.y = 400;
-    // this.vy = 2;
-
-    // this.vx = 10;
-    // this.vy = 10;
-    // this.g = 0.98;
-    // // this.vg = 10;
-
     this.direction = 0;
     this.keyStorage = [];
 
@@ -22,19 +14,6 @@ export class Ball2 {
   }
 
   draw(ctx, stageWidth, stageHeight) {
-    // if (this.y < stageHeight - this.radius) {
-    //   this.gravity();
-    // } else {
-    //   this.hitBottom(stageWidth, stageHeight);
-    // }
-
-    // if (this.y - this.radius > stageHeight) {
-    //   this.vy = -this.vy;
-    // } else {
-    //   this.vy += 1;
-    // }
-    // this.y += this.vy;
-    
     if (this.keyStorage[37] == true) {
       this.x -= this.vx;
     }
@@ -69,21 +48,4 @@ export class Ball2 {
       this.keyStorage[e.keyCode] = false;
     }
   }
-
-  // jump() {
-    
-  // }
-  
-  // hitBottom(stageWidth, stageHeight) {
-  //   if (this.y > stageHeight - this.radius) {
-  //     this.y = stageHeight - this.radius;
-  //     this.vy = 0;
-  //   }
-  // }
-
-  // gravity() {
-  //   this.vy += this.vy * this.g;
-  //   this.y += this.vy;
-  //   console.log(this.vy);
-  // }
 }
