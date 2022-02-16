@@ -14,7 +14,6 @@ export class Ball {
     this.y += this.vy;
 
     this.bounceWindow(stageWidth, stageHeight);
-
     this.bounceBlock(block);
 
     ctx.fillStyle = '#fdd700';
