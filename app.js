@@ -1,18 +1,22 @@
-import {
-  Ball
-} from './ball.js';
+// import {
+//   Ball
+// } from './ball.js';
+
+// import {
+//   Block
+// } from './block.js';
+
+// import {
+//   Ball2
+// } from './ball2.js';
+
+// import {
+//   Ball3
+// } from './ball3.js';
 
 import {
-  Block
-} from './block.js';
-
-import {
-  Ball2
-} from './ball2.js';
-
-import {
-  Ball3
-} from './ball3.js';
+  Clock
+} from './clock.js'
 
 class App {
   constructor() {
@@ -28,7 +32,8 @@ class App {
     // this.ball = new Ball(this.stageWidth, this.stageHeight, 12, 18);
     // this.block = new Block(350, 30, 100, 250);
     // this.ball2 = new Ball2(this.stageWidth, this.stageHeight, 20, 20, 12, 10);
-    this.ball3 = new Ball3(this.stageWidth, this.stageHeight, this.stageWidth / 2, this.stageHeight / 2, 12);
+    // this.ball3 = new Ball3(this.stageWidth, this.stageHeight, this.stageWidth / 2, this.stageHeight / 2, 12);
+    this.clock = new Clock(200, 200, 50, 50);
 
     window.requestAnimationFrame(this.animate.bind(this));
   }
@@ -51,8 +56,9 @@ class App {
     // this.ball.draw(this.ctx, this.stageWidth, this.stageHeight, this.block);
     // this.ball2.draw(this.ctx, this.stageWidth, this.stageHeight);
     // this.ball3.draw(this.ctx);
-    this.ball3.arrowMove(this.ctx);
-    this.ball3.jumping(this.ctx);
+    // this.ball3.arrowMove(this.ctx);
+    // this.ball3.jumping(this.ctx);
+    this.clock.draw(this.ctx);
   }
 }
 
