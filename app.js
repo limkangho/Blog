@@ -10,9 +10,9 @@
 //   Ball2
 // } from './ball2.js';
 
-// import {
-//   Ball3
-// } from './ball3.js';
+import {
+  Ball3
+} from './ball3.js';
 
 import {
   Clock
@@ -36,7 +36,7 @@ class App {
     // this.ball = new Ball(this.stageWidth, this.stageHeight, 12, 18);
     // this.block = new Block(350, 30, 100, 250);
     // this.ball2 = new Ball2(this.stageWidth, this.stageHeight, 20, 20, 12, 10);
-    // this.ball3 = new Ball3(this.stageWidth, this.stageHeight);
+    this.ball3 = new Ball3(this.stageWidth, this.stageHeight);
     this.clock = new Clock(200, 200, 50, 50);
     this.character = new Character(this.stageWidth, this.stageHeight);
 
@@ -60,7 +60,7 @@ class App {
     // this.block.draw(this.ctx);
     // this.ball.draw(this.ctx, this.stageWidth, this.stageHeight, this.block);
     // this.ball2.draw(this.ctx, this.stageWidth, this.stageHeight);
-    // this.ball3.draw(this.ctx);
+    this.ball3.draw(this.ctx);
     this.clock.draw(this.ctx);
     this.character.draw(this.ctx);
   }
