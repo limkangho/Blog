@@ -27,5 +27,4 @@ export class Clock {
     ctx.textAlign = "center";
     ctx.fillText(hours + ":" + minutes + ":" + seconds, this.clockX, this.clockY, this.width);
   }
- 
 }

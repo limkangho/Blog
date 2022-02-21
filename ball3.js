@@ -1,26 +1,23 @@
 export class Ball3 {
-  constructor(stageWidth, stageHeight, x, y, radius) {
-    this.stageWidth = stageWidth;
-    this.stageHeight = stageHeight;
-    this.x = x;
-    this.y = y;
-    this.radius = radius;
-    // this.x = stageWidth / 2;
-    // this.y = stageHeight / 2;
+  constructor(stageWidth, stageHeight) {
+    this.x = stageWidth / 2;
+    this.y = stageHeight - 100;
+    this.radius = 20;
 
     //key inputs
     this.keyStorage = [];
 
-    this.vx = 3;
-    this.vy = 2;
-
-    
+    //ball speed
+    this.vx = 5;
+    this.vy = 5;
 
     document.addEventListener('keydown', this.keyStore.bind(this), true);
     document.addEventListener('keyup', this.keyDiscard.bind(this), true);
   }
 
   draw(ctx) {
+    this.arrowMove();
+
     ctx.fillStyle = '#4284f3';
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI)
@@ -28,19 +25,19 @@ export class Ball3 {
   }
 
   keyStore(e) {
-    if (e.keyCode >= 37 && e.keyCode <= 40 || e.keyCode == 32) {
+    if (e.keyCode >= 37 && e.keyCode <= 40) {
       this.keyStorage[e.keyCode] = true;
+      console.log(e.keyCode);
     }
   }
 
   keyDiscard(e) {
-    if (e.keyCode >= 37 && e.keyCode <= 40 || e.keyCode == 32) {
+    if (e.keyCode >= 37 && e.keyCode <= 40) {
       this.keyStorage[e.keyCode] = false;
     }
-    // if (e.keyCode == 32)
   }
 
-  arrowMove(ctx) {
+  arrowMove() {
     if (this.keyStorage[37] == true) {
       this.x -= this.vx;
     }
@@ -53,10 +50,5 @@ export class Ball3 {
     if (this.keyStorage[40] == true) {
       this.y += this.vy;
     }
-    this.draw(ctx);
-  }
-
-  jumping(ctx) {
-  
   }
 }
