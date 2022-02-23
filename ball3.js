@@ -50,7 +50,7 @@ export class Ball3 {
     }
 
     if (this.keyStorage[32] == true && this.jumping == false) {
-      this.vy = this.vy - 30;
+      this.vy = this.vy - 20;
       this.jumping = true;
     }
 
