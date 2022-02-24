@@ -53,7 +53,6 @@ class App {
   }
 
   animate() {
-    this.resize();
     window.requestAnimationFrame(this.animate.bind(this));
 
     this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
