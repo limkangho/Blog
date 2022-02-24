@@ -16,7 +16,7 @@ export class Character {
     if (this.i > 11) {
       this.i = 0;
     }
-    ctx.drawImage(this.img, this.spriteWidth * this.i, 0, this.spriteWidth, this.spriteHeight, this.stageWidth / 2 - 50, this.stageHeight / 2 - 50, this.spriteWidth, this.spriteHeight);
+    ctx.drawImage(this.img, this.spriteWidth * this.i, 0, this.spriteWidth, this.spriteHeight, this.stageWidth / 2 - this.spriteWidth / 2, this.stageHeight / 2 - this.spriteHeight / 2, this.spriteWidth, this.spriteHeight);
     this.i = this.i + 1;
   }
 }
