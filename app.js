@@ -1,26 +1,9 @@
-// import {
-//   Ball
-// } from './ball.js';
-
-// import {
-//   Block
-// } from './block.js';
-
-// import {
-//   Ball2
-// } from './ball2.js';
-
-import {
-  Ball3
-} from './ball3.js';
-
-import {
-  Clock
-} from './clock.js'
-
-import {
-  Character
-} from './character.js'
+import { Ball } from './ball.js';
+import { Block } from './block.js';
+import { Ball2 } from './ball2.js';
+import { Ball3 } from './ball3.js';
+import { Clock } from './clock.js'
+import { Character } from './character.js'
 
 class App {
   constructor() {
